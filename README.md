@@ -51,7 +51,7 @@ Isolates calculation logic by programming custom analytical measures to translat
   ```dax
   KPI_Active_Resources = DISTINCTCOUNT('cleaned_cloud_resources_data'[Resource_ID])
   ```
-* **Projected Monthly Financial Burn Rate (Standardized 730-Hour Cloud Month):**
+* **Projected Monthly Financial Spend (Standardized 730-Hour Cloud Month):**
   ```dax
   KPI_Projected_Monthly_Spend = SUM('cleaned_cloud_resources_data'[Hourly_Cost]) * 730
   ```
@@ -78,3 +78,11 @@ Designed with a responsive grid layout mapping macro-level financial overviews d
 2. Run the preprocessing data-cleansing pipeline: `python src/clean_telemetry.py`
 3. Launch Power BI Desktop and open `models/Cloud_Resources_Dashboard.pbix`.
 4. Click **Refresh** to populate the data model from the newly cleaned dataset.
+
+---
+
+## 💡 Conclusion & Key Takeaways
+This project successfully bridges the gap between raw **Data Engineering pipelines** and high-impact **FinOps business strategy**. By executing an end-to-end framework, it proves three vital engineering concepts:
+1. **Scalable Preprocessing:** Raw data is rarely clean; building a defensive Python script ensures that system errors are resolved long before the data reaches the data visualization layer.
+2. **Architectural Performance:** Relying on a relational **Star Schema** data model instead of flat tables drastically minimizes calculation load, protects time-intelligence reporting, and ensures sub-second chart rendering.
+3. **Actionable Business Value:** By scaling hourly operational telemetry into a standardized **Projected Monthly Spend**, this platform converts dense technical logs into strategic financial metrics. The dashboard serves as a functional control room for executives, enabling companies to instantly locate expensive cloud leaks, monitor multi-cloud vendor spending, and reclaim lost budget from underutilized assets.
