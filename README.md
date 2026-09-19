@@ -3,13 +3,15 @@
 An end-to-end data engineering and business intelligence platform that ingests, cleanses, and models **20,000 chaotic infrastructure telemetry logs** into a high-performance **Star Schema** dashboard to monitor a global cloud budget of **\$78.80 Million**.
 
 ## 📊 Live Dashboard Preview
-![Cloud Resources Management Dashboard](Cloud_Resources_Management_Dashboard.png)
+![Cloud Resources Management Dashboard](Cloud_Resources_Dashboard.png)
 
 ---
 
 ## 🌟 Project Architecture & Highlights
 * **Data Scale:** 20,000 transactional infrastructure records.
 * **Financial Footprint:** \$78.80M projected monthly infrastructure burn rate.
+* **Asset Volume:** 17K Active Infrastructure Resources.
+* **System Efficiency Base:** 51.82% Average CPU Utilization.
 * **Core Methodology:** Python preprocessing, Power Query text normalization, Star Schema relational modeling, and advanced DAX business metric engineering.
 * **Cloud Infrastructure Scope:** Multi-cloud monitoring across Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).
 
@@ -28,7 +30,7 @@ A custom **Python (Pandas)** pipeline handles structural extraction and baseline
 
 ### Phase 2: Power Query Ingestion & String Normalization (M-Code)
 The preprocessed baseline file is ingested directly into Power BI Desktop. Advanced front-end string normalization rules flush out remaining blank string literals (`""`) and invisible background system breakers to achieve a **100% Solid Green Data Quality Bar**:
-* **Text Engineering:** Applies `Trim`, `Clean`, and `Capitalize Each Word` steps across regional string metrics to prevent visual display block duplication.
+* **Text Engineering:** Applies `Trim`, `Clean`, and `Capitalize Each Word` steps across regional string metrics to prevent visual display duplication.
 * **M-Code Value Overrides:** Employs explicit conditional script logic inside the formula bar to catch hidden space variations and replace empty values with structured corporate placeholders:
   ```powerquery
   = Table.ReplaceValue(#"Prior Step Name", each [Owner_Email], each if [Owner_Email] = null or Text.Clean(Text.Trim([Owner_Email])) = "" then "unassigned@company.com" else [Owner_Email], Replacer.ReplaceValue, {"Owner_Email"})
@@ -68,8 +70,8 @@ Designed with a responsive grid layout mapping macro-level financial overviews d
 2. **Executive KPI Header Row:** Four crisp metrics tracking total assets, hourly expenditure vectors, average performance, and projected monthly spend variables.
 3. **Spend Allocation (Donut Chart):** Tracks budget footprints across providers, demonstrating equal splits (**~32-33%**) across GCP, AWS, and Azure.
 4. **Active Inventory Status (Funnel Chart):** Groups resource states, isolating system load sizes across `Active`, `Stopped`, and `Running` states.
-5. **Regional Expense View (Clustered Bar Chart):** Maps infrastructure cost centers globally, identifying `Us-East-1` as the primary expenditure driver.
-6. **Asset Density Distribution (Treemap Matrix):** Allocates cost matrix groups by cloud provider segments.
+5. **Regional Expense View (Horizontal Bar Chart):** Maps infrastructure cost centers globally, identifying `Us-East-1` as the primary expenditure driver.
+6. **Provider Efficiency Grid (Treemap Chart):** Tracks performance metrics by breaking down `Avg_CPU_Utilizations by Provider` for AWS, Azure, and Google Cloud.
 
 ---
 
