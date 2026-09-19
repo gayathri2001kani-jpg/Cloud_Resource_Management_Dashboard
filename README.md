@@ -3,7 +3,7 @@
 An end-to-end data engineering and business intelligence platform that ingests, cleanses, and models **20,000 chaotic infrastructure telemetry logs** into a high-performance **Star Schema** dashboard to monitor a global cloud budget of **\$78.80 Million**.
 
 ## 📊 Live Dashboard Preview
-![Cloud Resources Management Dashboard](Cloud_Resources_Dashboard.png)
+![Cloud Resources Management Dashboard](Cloud_Resources_Management_Dashboard.png)
 
 ---
 
